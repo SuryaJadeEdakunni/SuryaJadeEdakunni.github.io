@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Analytics Portfolio</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
       /* ============================================================
        BASIC STYLES — students can tweak colors/fonts here
@@ -18,10 +18,15 @@
       }
 
       body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
-        line-height: 1.5;
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 16px;
+        color: #2b2438;
+        background: #faf8fc;
+        line-height: 1.6;
+      }
+
+      h1, h2, h3 {
+      font-family: 'Fraunces', serif;
       }
 
       .container {
@@ -52,8 +57,11 @@
       }
 
       header h1 {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 6px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #6c4f9e;
+        display: inline-block;
       } /* NAME */
       header p {
         font-size: 16px;
@@ -78,9 +86,9 @@
       }
 
       .tab-button.active {
-        background: #2c3e50;
+        background: #6c4f9e;
         color: #fff;
-        border-color: #2c3e50;
+        border-color: #6c4f9e;
       }
 
       /* ---------- TAB CONTENT ---------- */
@@ -98,6 +106,22 @@
         padding: 24px;
       }
 
+      .tab-button:hover {
+        border-color: #6c4f9e;
+        color: #6c4f9e;
+        transition: all 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(108, 79, 158, 0.15);
+        transition: all 0.2s ease;
+      }
+
+      .card {
+        transition: all 0.2s ease;
+      }
+
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
       .cards {
         display: grid;
@@ -110,6 +134,7 @@
         border-radius: 6px;
         overflow: hidden;
         background: #fff;
+        transition: all 0.2s ease;
       }
 
       /* Empty space for project photo */
@@ -151,9 +176,7 @@
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <img src="C:\Users\surya\Downloads\1698021127881.jpg" class="photo" alt="Your Photo">
-        <div class="photo">Photo</div>
-
+        <img src="images/Linkedinprofile.jpg" class="photo" alt="Your Photo">
         <h1>Surya Jade Edakunni</h1>
         <p>R · SQL · Python · Tableau . Power BI</p>
       </header>
@@ -183,37 +206,32 @@
       </div>
 
       <!-- ---------- TAB 2: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
-        <div class="cards">
-          <!-- CARD 1 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="card">
-            <div class="card-photo">Project Image</div>
-            <div class="card-text">
-              <h3>Project Title</h3>
-              <p>Short description of what you did and the tools you used.</p>
-            </div>
-          </div>
+      <!-- CARD 1 -->
+      <a href="#research-projects" class="card">
+        <div class="card-photo">Research</div>
+        <div class="card-text">
+          <h3>Research Projects</h3>
+          <p>See my current research work.</p>
         </div>
-      </div>
-    </div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="#analytics-projects" class="card">
+        <div class="card-photo">Analytics</div>
+        <div class="card-text">
+          <h3>Analytics Projects</h3>
+          <p>See my analytics and coding projects.</p>
+        </div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="#where-you-can-find-me" class="card">
+        <div class="card-photo">Socials</div>
+        <div class="card-text">
+          <h3>Socials</h3>
+          <p>Connect with me on LinkedIn and GitHub.</p>
+        </div>
+      </a>
 
     <!-- ============================================================
        SIMPLE TAB SWITCHING SCRIPT
