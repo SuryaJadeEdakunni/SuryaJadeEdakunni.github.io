@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Analytics Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
       /* ============================================================
        BASIC STYLES — students can tweak colors/fonts here
@@ -167,6 +168,35 @@
           grid-template-columns: 1fr;
         }
       }
+      .socials-banner {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #6c4f9e;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 8px 16px;
+        border: 1px solid #6c4f9e;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+      }
+
+      .social-link:hover {
+        background: #6c4f9e;
+        color: #fff;
+      }
+
+      .social-link i {
+        font-size: 18px;
+      }
     </style>
   </head>
 
@@ -176,10 +206,19 @@
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <img src="images/Linkedinprofile.jpg" class="photo" alt="Your Photo">
+        <img src="Images/Linkedinprofile.jpg" class="photo" alt="Your Photo">
         <h1>Surya Jade Edakunni</h1>
         <p>R · SQL · Python · Tableau . Power BI</p>
       </header>
+
+      <div class="socials-banner">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/SuryaJadeEdakunni" target="_blank" class="social-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
 
       <!-- ============================================================
          TABS
@@ -221,15 +260,6 @@
         <div class="card-text">
           <h3>Analytics Projects</h3>
           <p>See my analytics and coding projects.</p>
-        </div>
-      </a>
-
-      <!-- CARD 3 -->
-      <a href="#where-you-can-find-me" class="card">
-        <div class="card-photo">Socials</div>
-        <div class="card-text">
-          <h3>Socials</h3>
-          <p>Connect with me on LinkedIn and GitHub.</p>
         </div>
       </a>
 
