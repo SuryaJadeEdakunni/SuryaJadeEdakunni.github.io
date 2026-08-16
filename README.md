@@ -1,4 +1,4 @@
-# Surya Jade Edakunni — Portfolio
+# Surya Jade Edakunni - Portfolio
 
 My personal portfolio website, built with HTML/CSS and hosted on GitHub Pages.
 
