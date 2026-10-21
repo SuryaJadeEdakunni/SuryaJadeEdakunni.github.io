@@ -5,11 +5,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Analytics Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <title>Surya Jade Edakunni | Portfolio</title>
+    <meta name="description" content="Business analytics portfolio of Surya Jade Edakunni: research and analytics projects in fintech, AI and beauty." />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-      /* ---------- BASE ---------- */
+      :root {
+        --paper: #faf8fc;
+        --surface: #ffffff;
+        --ink: #2b2438;
+        --muted: #6b6478;
+        --plum: #6c4f9e;
+        --plum-deep: #4e3878;
+        --lilac: #f1ecf8;
+        --line: #e7e1ef;
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -19,282 +30,408 @@
       body {
         font-family: 'Inter', Arial, sans-serif;
         font-size: 16px;
-        color: #2b2438;
-        background: #faf8fc;
-        line-height: 1.6;
+        line-height: 1.65;
+        color: var(--ink);
+        background: var(--paper);
       }
 
       h1, h2, h3 {
-      font-family: 'Fraunces', serif;
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      a {
+        color: var(--plum);
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--plum);
+        outline-offset: 3px;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1040px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 56px 24px 96px;
       }
 
-      /* ---------- HEADER (photo + name + subheading) ---------- */
+      /* ---------- HEADER ---------- */
       header {
         text-align: center;
-        margin-bottom: 30px;
       }
 
       .photo {
-        width: 140px;
-        height: 140px;
+        width: 148px;
+        height: 148px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid #fff;
-        box-shadow: 0 2px 10px rgba(43, 36, 56, 0.15);
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
+        border: 4px solid var(--surface);
+        box-shadow: 0 2px 12px rgba(43, 36, 56, 0.12);
+        margin-bottom: 20px;
       }
 
       header h1 {
-        font-size: 32px;
+        font-size: 40px;
+        margin-bottom: 8px;
+      }
+
+      .tagline {
+        color: var(--muted);
+        font-size: 17px;
         margin-bottom: 6px;
-        padding-bottom: 12px;
-        border-bottom: 3px solid #6c4f9e;
-        display: inline-block;
-      } /* NAME */
-      header p {
-        font-size: 16px;
-        color: #555;
-      } /* EXPERIENCES */
+      }
+
+      .skills {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--plum);
+        font-weight: 500;
+        font-size: 15px;
+        padding: 8px 18px;
+        border: 1px solid var(--plum);
+        border-radius: 999px;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+
+      .social-link:hover {
+        background: var(--plum);
+        color: #fff;
+      }
 
       /* ---------- TABS ---------- */
       .tabs {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 24px;
+        gap: 4px;
+        width: fit-content;
+        margin: 48px auto 40px;
+        padding: 4px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 999px;
       }
 
       .tab-button {
-        padding: 10px 22px;
-        border: 1px solid #ccc;
-        background: #fff;
-        cursor: pointer;
+        font: inherit;
         font-size: 15px;
-        border-radius: 4px;
+        font-weight: 500;
+        color: var(--ink);
+        background: transparent;
+        border: 0;
+        border-radius: 999px;
+        padding: 9px 26px;
+        cursor: pointer;
       }
 
-      .tab-button.active {
-        background: #6c4f9e;
+      .tab-button[aria-selected="true"] {
+        background: var(--plum);
         color: #fff;
-        border-color: #6c4f9e;
       }
 
-      /* ---------- TAB CONTENT ---------- */
-      .tab-content {
+      .tab-panel[hidden] {
         display: none;
       }
-      .tab-content.active {
-        display: block;
+
+      /* ---------- ABOUT ---------- */
+      .about {
+        max-width: 680px;
+        margin: 0 auto;
+        font-size: 17px;
       }
 
-      .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
+      .about p + p {
+        margin-top: 18px;
       }
 
-      .tab-button:hover {
-        border-color: #6c4f9e;
-        color: #6c4f9e;
-        transition: all 0.2s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(108, 79, 158, 0.15);
-        transition: all 0.2s ease;
-      }
-
-      .card {
-        transition: all 0.2s ease;
-      }
-
-      /* ---------- PROJECT CARDS ---------- */
-      .cards {
+      /* ---------- CATEGORY PICKER ---------- */
+      .picker {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        gap: 20px;
       }
 
-      .card {
-        border: 1px solid #eee;
-        border-radius: 6px;
-        overflow: hidden;
-        background: #fff;
-        transition: all 0.2s ease;
-        text-decoration: none;
+      .pick {
+        font: inherit;
         color: inherit;
+        text-align: left;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
       }
 
-      .card-photo {
+      .pick:hover {
+        border-color: var(--plum);
+      }
+
+      .pick[aria-pressed="true"] {
+        border-color: var(--plum);
+        box-shadow: 0 0 0 2px var(--plum);
+      }
+
+      .pick img {
         display: block;
         width: 100%;
-        height: 140px;
+        height: 150px;
         object-fit: cover;
       }
 
-      .card-text {
-        padding: 14px;
-      }
-      .card-text h3 {
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-      .card-text p {
-        font-size: 14px;
-        color: #555;
+      .pick-text {
+        padding: 16px 20px 18px;
       }
 
-      /* ---------- MOBILE: stack cards vertically ---------- */
-      @media (max-width: 640px) {
-        .cards {
-          grid-template-columns: 1fr;
-        }
-      }
-      .socials-banner {
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        margin-bottom: 24px;
+      .pick-text h2 {
+        font-size: 21px;
+        margin-bottom: 2px;
       }
 
-      .social-link {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        text-decoration: none;
-        color: #6c4f9e;
-        font-weight: 500;
+      .pick[aria-pressed="true"] h2 {
+        color: var(--plum-deep);
+      }
+
+      .pick-text p {
+        color: var(--muted);
         font-size: 15px;
-        padding: 8px 16px;
-        border: 1px solid #6c4f9e;
-        border-radius: 20px;
-        transition: all 0.2s ease;
       }
 
-      .social-link:hover {
-        background: #6c4f9e;
-        color: #fff;
+      .hint {
+        text-align: center;
+        color: var(--muted);
+        margin-top: 28px;
       }
 
-      .social-link i {
-        font-size: 18px;
+      .view {
+        margin-top: 56px;
       }
 
-      /* ---------- PROJECT ENTRIES ---------- */
-      .section {
-        margin-top: 40px;
+      .view[hidden] {
+        display: none;
       }
 
-      .section h2 {
-        margin-bottom: 14px;
+      .view-intro {
+        margin-bottom: 28px;
       }
 
-      .section > p {
-        margin-bottom: 8px;
-      }
-
-      .section a {
-        color: #6c4f9e;
-      }
-
-      .project {
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-        gap: 24px;
-        align-items: center;
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 20px;
-      }
-
-      .project img {
-        width: 100%;
-        border-radius: 4px;
-        border: 1px solid #eee;
-      }
-
-      .project h3 {
-        font-size: 20px;
+      .view-intro h2 {
+        font-size: 28px;
         margin-bottom: 4px;
       }
 
-      .project-meta {
+      .view-intro p {
+        color: var(--muted);
+      }
+
+      .subhead {
+        font-size: 22px;
+        margin: 56px 0 20px;
+      }
+
+      /* ---------- RESEARCH ENTRIES ---------- */
+      .entry {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 32px;
+        padding: 28px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .entry:last-of-type {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .entry-side {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .entry-side strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      .status {
+        display: inline-block;
+        margin-top: 10px;
         font-size: 13px;
-        color: #7a7287;
-        margin-bottom: 10px;
+        font-weight: 500;
+        color: var(--plum-deep);
+        background: var(--lilac);
+        padding: 2px 10px;
+        border-radius: 999px;
+      }
+
+      .entry h3 {
+        font-size: 21px;
+        margin-bottom: 8px;
+      }
+
+      .entry p {
+        max-width: 64ch;
+      }
+
+      /* ---------- PROJECT CARDS ---------- */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+
+      .project {
+        display: flex;
+        flex-direction: column;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .project-image {
+        display: block;
+        width: 100%;
+        height: 230px;
+        object-fit: contain;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        padding: 12px;
+      }
+
+      .project-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 22px 24px 24px;
+      }
+
+      .project h3 {
+        font-size: 21px;
+        margin-bottom: 2px;
+      }
+
+      .meta {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 12px;
       }
 
       .project p {
         font-size: 15px;
-        color: #444;
-        margin-bottom: 12px;
+        margin-bottom: 16px;
       }
 
       .tags {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        margin-bottom: 14px;
+        margin: 14px 0 0;
       }
 
       .tag {
-        font-size: 12px;
-        padding: 3px 10px;
-        border-radius: 12px;
-        background: #f1ecf8;
-        color: #6c4f9e;
+        font-size: 13px;
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: var(--lilac);
+        color: var(--plum-deep);
       }
 
-      .project-links {
+      .links {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        margin-top: auto;
+        padding-top: 20px;
       }
 
-      .section .btn {
+      .btn {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 7px;
         font-size: 14px;
-        padding: 7px 14px;
-        border: 1px solid #6c4f9e;
-        border-radius: 4px;
-        color: #6c4f9e;
+        font-weight: 500;
+        padding: 8px 16px;
+        border: 1px solid var(--plum);
+        border-radius: 6px;
+        color: var(--plum);
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: background 0.15s ease, color 0.15s ease;
       }
 
-      .section .btn.primary,
-      .section .btn:hover {
-        background: #6c4f9e;
+      .btn.primary,
+      .btn:hover {
+        background: var(--plum);
         color: #fff;
       }
 
-      .project.text-only {
-        grid-template-columns: 1fr;
-        margin-top: 16px;
+      .writing {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 26px 28px;
       }
 
-      @media (max-width: 640px) {
-        .project {
+      .writing h3 {
+        font-size: 21px;
+        margin-bottom: 2px;
+      }
+
+      .writing p {
+        max-width: 72ch;
+      }
+
+      .writing .links {
+        padding-top: 18px;
+      }
+
+      /* ---------- MOBILE ---------- */
+      @media (max-width: 760px) {
+        .container {
+          padding: 40px 16px 72px;
+        }
+
+        header h1 {
+          font-size: 32px;
+        }
+
+        .picker,
+        .project-grid {
           grid-template-columns: 1fr;
         }
-        .socials-banner {
+
+        .pick img {
+          height: 110px;
+        }
+
+        .entry {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .socials {
           flex-wrap: wrap;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
         }
       }
     </style>
@@ -305,142 +442,256 @@
       <header>
         <img src="Images/Linkedinprofile.jpg" class="photo" alt="Surya Jade Edakunni">
         <h1>Surya Jade Edakunni</h1>
-        <p>Python · SQL · R · Tableau · Power BI · Microsoft Suite</p>
+        <p class="tagline">Master of Management in Analytics student at McGill University</p>
+        <p class="skills">Python · SQL · R · Tableau · Power BI · Microsoft Suite</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/suryaedakunni/" target="_blank" rel="noopener" class="social-link">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a href="https://github.com/SuryaJadeEdakunni" target="_blank" rel="noopener" class="social-link">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </div>
       </header>
 
-      <div class="socials-banner">
-        <a href="https://www.linkedin.com/in/suryaedakunni/" target="_blank" class="social-link">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://github.com/SuryaJadeEdakunni" target="_blank" class="social-link">
-          <i class="fa-brands fa-github"></i> GitHub
-        </a>
+      <div class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab-button" role="tab" id="tab-about" aria-controls="about" aria-selected="true">About Me</button>
+        <button class="tab-button" role="tab" id="tab-projects" aria-controls="projects" aria-selected="false">Projects</button>
       </div>
 
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
-          About Me
-        </button>
-        <button class="tab-button" onclick="showTab('projects')">
-          Projects
-        </button>
-      </div>
-
-      <!-- ---------- TAB 1: ABOUT ME ---------- -->
-      <div id="about" class="tab-content active">
-        <div class="panel">
+      <!-- ABOUT ME -->
+      <section id="about" class="tab-panel" role="tabpanel" aria-labelledby="tab-about">
+        <div class="about">
           <p>
-            Hi, I'm Surya! Originally from Gaborone, Botswana, now studying at McGill University, where I'm pursuing a Master's in Management Analytics (MMA) after completing my undergrad in Business Analytics with a minor in Finance. 
-            I love turning data into decisions, and I'm proficient in Python and SQL, with additional experience in R and Visual Basic. I'm also fluent across the Microsoft Suite. 
-            I am fluent in English and currently leveling up my French! Outside of analytics, you'll find me exploring fashion and beauty trends and trying to study the intersection. In fact I am conducting independent research on the intersection of fashion and beauty, and how it can be leveraged to improve business outcomes.
-            Right now, I'm working as a research assistant on two exciting projects: one exploring fintech in Africa, where I co-lead the research, and another looking at AI in recruitment, where I support the research process.
+            Hi, I'm Surya! Originally from Gaborone, Botswana, I'm now studying at McGill University, where I'm
+            pursuing a Master of Management in Analytics (MMA) after completing my undergrad in Business Analytics
+            with a concentration in Finance.
           </p>
           <p>
-            I hope to use my skills and experiences in the world of beauty and fashion analytics, but I am always open to new opportunities!
+            I love turning data into decisions. I'm proficient in Python and SQL, with additional experience in R and
+            Visual Basic, and I'm fluent across the Microsoft Suite. I'm fluent in English and currently leveling up
+            my French!
+          </p>
+          <p>
+            Outside of analytics, you'll find me exploring fashion and beauty trends and the business behind them.
+            I recently completed an independent study applying vector databases and AI to beauty product search.
+            Right now, I'm a research assistant on three projects: digital payments in Ghana and Nigeria, AI in
+            hiring, and venture capital funding for startups.
+          </p>
+          <p>
+            I hope to use my skills and experience in the world of beauty and fashion analytics, but I am always open
+            to new opportunities!
           </p>
         </div>
-      </div>
+      </section>
 
-      <!-- ---------- TAB 2: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
-        <div class="cards">
-          <!-- CARD 1 -->
-          <a href="#research-projects" class="card">
-            <img src="Images/Research.jpg" class="card-photo" alt="Research">
-            <div class="card-text">
-              <h3>Research Projects</h3>
-              <p>See my current research work.</p>
+      <!-- PROJECTS -->
+      <section id="projects" class="tab-panel" role="tabpanel" aria-labelledby="tab-projects" hidden>
+        <div class="picker">
+          <button class="pick" aria-pressed="false" aria-controls="research-view" data-view="research-view">
+            <img src="Images/Research.jpg" alt="">
+            <div class="pick-text">
+              <h2>Research Projects</h2>
+              <p>My ongoing research and writing.</p>
             </div>
-          </a>
-
-          <!-- CARD 2 -->
-          <a href="#analytics-projects" class="card">
-            <img src="Images/Analytics.jpg" class="card-photo" alt="Analytics">
-            <div class="card-text">
-              <h3>Analytics Projects</h3>
-              <p>See my analytics and coding projects.</p>
+          </button>
+          <button class="pick" aria-pressed="false" aria-controls="analytics-view" data-view="analytics-view">
+            <img src="Images/Analytics.jpg" alt="">
+            <div class="pick-text">
+              <h2>Analytics Projects</h2>
+              <p>Data, coding and machine learning projects.</p>
             </div>
-          </a>
+          </button>
         </div>
 
-        <div id="research-projects" class="section">
-          <h2>Research Projects</h2>
-          <p><strong>Fintech in Africa</strong> : Leading research on fintech adoption and trends across Africa.</p>
-          <p><strong>AI in Recruitment</strong> : Supporting the research process for a project studying AI in hiring.</p>
-          <p><strong>Vector Databases in the Beauty Industry</strong> : MMA Independent Research Project which studies the application of vector databases in the beauty industry. <a href="#semantic-search">See the project below.</a></p>
+        <p class="hint" id="pick-hint">Choose a category to see the projects.</p>
 
-          <div class="project text-only" id="revolut">
+        <!-- RESEARCH -->
+        <div id="research-view" class="view" hidden>
+          <div class="view-intro">
+            <h2>Research Projects</h2>
+            <p>Research assistant work at McGill University.</p>
+          </div>
+
+          <article class="entry">
+            <div class="entry-side">
+              <strong>Research Assistant</strong>
+              Sustainable Growth Initiative, McGill University
+              <br><span class="status">Ongoing</span>
+            </div>
             <div>
-              <h3>Banked but Underserved: Revolut's Strategic Case for South Africa</h3>
-              <div class="project-meta">Strategy report · FINE 477, Fintech for Business and Finance</div>
+              <h3>Digital Payments in Ghana and Nigeria</h3>
               <p>
-                84% of South African adults have a bank account, yet most remain poorly served by the five banks
-                that dominate the market. This report argues that Revolut should win there by being
-                different, not just cheaper. It recommends using the PayShap instant-payment system to undercut the
-                big banks' foreign exchange margins and build trust before its banking licence arrives, and launching a
-                stablecoin remittance corridor for the UK–South Africa diaspora.
+                Analyzing how digital payment ecosystems in Ghana and Nigeria compare, from mobile money and fintech
+                to crypto and central bank digital currencies, using institutional, market and regulatory data for a
+                comparative case report. I lead expert interviews with industry networks and payment stakeholders,
+                and synthesize what they say about trust, security and user preferences into the report's core analysis.
               </p>
               <div class="tags">
                 <span class="tag">Fintech</span>
-                <span class="tag">Competitive Strategy</span>
                 <span class="tag">Payments</span>
-                <span class="tag">Stablecoins</span>
-                <span class="tag">South Africa</span>
-              </div>
-              <div class="project-links">
-                <a class="btn primary" href="revolut-south-africa-strategy.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> Read Report</a>
+                <span class="tag">Expert interviews</span>
+                <span class="tag">West Africa</span>
               </div>
             </div>
-          </div>
-        </div>
+          </article>
 
-        <div id="analytics-projects" class="section">
-          <h2>Analytics Projects</h2>
-
-          <div class="project" id="semantic-search">
-            <img src="Images/semantic-search.png" alt="Architecture diagram of the semantic product search system">
+          <article class="entry">
+            <div class="entry-side">
+              <strong>Research Assistant</strong>
+              AI &amp; Organizational Behavior, McGill University
+              <br><span class="status">Ongoing</span>
+            </div>
             <div>
-              <h3>Semantic Product Search</h3>
-              <div class="project-meta">Independent Study · June – August 2026</div>
+              <h3>AI in Hiring</h3>
               <p>
-                A beauty product recommender that understands natural-language requests like
-                "a warm, cozy perfume for winter evenings". It searches 8,494 Sephora products
-                by meaning using vector embeddings in ChromaDB, then uses a locally run Llama 3.1
-                model to recommend and explain the best 1–3 matches.
+                Studying how people perceive the fairness of AI in hiring. I clean and encode survey data and run
+                reliability, correlation and t-test analyses, and I built a web scraper and text-classification
+                pipeline that measures how often Ontario job postings disclose their use of AI.
+              </p>
+              <div class="tags">
+                <span class="tag">Survey analysis</span>
+                <span class="tag">Python</span>
+                <span class="tag">Web scraping</span>
+                <span class="tag">Text classification</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-side">
+              <strong>Research Assistant</strong>
+              Venture Capital, McGill University
+              <br><span class="status">Ongoing</span>
+            </div>
+            <div>
+              <h3>Cofounder Departures and Venture Capital Funding</h3>
+              <p>
+                Studying whether losing a cofounder changes how long a startup takes to raise its first venture
+                capital round. I built a Python pipeline that turns large-scale Crunchbase data into a startup panel
+                for hazard regression analysis.
               </p>
               <div class="tags">
                 <span class="tag">Python</span>
-                <span class="tag">ChromaDB</span>
-                <span class="tag">Sentence Transformers</span>
-                <span class="tag">Ollama · Llama 3.1</span>
-                <span class="tag">RAG</span>
-              </div>
-              <div class="project-links">
-                <a class="btn primary" href="https://github.com/SuryaJadeEdakunni/semantic-product-search" target="_blank"><i class="fa-brands fa-github"></i> View Code</a>
-                <a class="btn" href="https://github.com/SuryaJadeEdakunni/semantic-product-search/blob/main/docs/report.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> Report</a>
-                <a class="btn" href="https://github.com/SuryaJadeEdakunni/semantic-product-search/blob/main/docs/presentation.pdf" target="_blank"><i class="fa-solid fa-display"></i> Slides</a>
+                <span class="tag">Crunchbase</span>
+                <span class="tag">Panel data</span>
+                <span class="tag">Hazard models</span>
               </div>
             </div>
+          </article>
+
+          <h3 class="subhead">Writing</h3>
+
+          <article class="writing" id="revolut">
+            <h3>Banked but Underserved: Revolut's Strategic Case for South Africa</h3>
+            <div class="meta">Strategy report for FINE 477, Fintech for Business and Finance</div>
+            <p>
+              84% of South African adults have a bank account, yet most remain poorly served by the five banks that
+              dominate the market. This report argues that Revolut should win there by being different, not just
+              cheaper. It recommends using the PayShap instant-payment system to undercut the big banks' foreign
+              exchange margins and build trust before its banking licence arrives, and launching a stablecoin
+              remittance corridor for the UK–South Africa diaspora.
+            </p>
+            <div class="tags">
+              <span class="tag">Fintech</span>
+              <span class="tag">Competitive strategy</span>
+              <span class="tag">Payments</span>
+              <span class="tag">Stablecoins</span>
+            </div>
+            <div class="links">
+              <a class="btn primary" href="revolut-south-africa-strategy.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> Read report</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div id="analytics-view" class="view" hidden>
+          <div class="view-intro">
+            <h2>Analytics Projects</h2>
+            <p>Projects from my undergraduate and MMA studies, with code on GitHub.</p>
           </div>
 
-          <p style="margin-top: 16px;">More analytics projects will be added here as I complete them in the MMA program.</p>
+          <div class="project-grid">
+            <article class="project" id="semantic-search">
+              <img class="project-image" src="Images/semantic-search.png" alt="Architecture diagram of the semantic product search system">
+              <div class="project-body">
+                <h3>Semantic Product Search</h3>
+                <div class="meta">Independent study, June to August 2026</div>
+                <p>
+                  A beauty product recommender that understands natural-language requests like "a warm, cozy perfume
+                  for winter evenings". It searches 8,494 Sephora products by meaning using vector embeddings in
+                  ChromaDB, then uses a locally run Llama 3.1 model to recommend and explain the best 1–3 matches.
+                </p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">ChromaDB</span>
+                  <span class="tag">Sentence Transformers</span>
+                  <span class="tag">Llama 3.1</span>
+                  <span class="tag">RAG</span>
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://github.com/SuryaJadeEdakunni/semantic-product-search" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> View code</a>
+                  <a class="btn" href="https://github.com/SuryaJadeEdakunni/semantic-product-search/blob/main/docs/report.pdf" target="_blank" rel="noopener">Report</a>
+                  <a class="btn" href="https://github.com/SuryaJadeEdakunni/semantic-product-search/blob/main/docs/presentation.pdf" target="_blank" rel="noopener">Slides</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project" id="marvel">
+              <img class="project-image" src="Images/marvel-network.png" alt="Network of the top 50 Marvel heroes, coloured by community">
+              <div class="project-body">
+                <h3>Marvel Storyline Optimizer</h3>
+                <div class="meta">Group project for MGSC 416</div>
+                <p>
+                  What makes a best-selling Marvel comic? We mapped how 6,296 heroes connect across comics, trained
+                  models to predict sales from creative choices, and used Gurobi optimization to design the
+                  highest-selling combination of characters, writer and penciler. I led the data cleaning and network
+                  analysis, and combined the team's work into one end-to-end pipeline.
+                </p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">NetworkX</span>
+                  <span class="tag">scikit-learn</span>
+                  <span class="tag">Gurobi</span>
+                  <span class="tag">Web scraping</span>
+                </div>
+                <div class="links">
+                  <a class="btn primary" href="https://github.com/SuryaJadeEdakunni/marvel-storyline-optimizer" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> View code</a>
+                  <a class="btn" href="https://github.com/SuryaJadeEdakunni/marvel-storyline-optimizer/blob/main/docs/report.pdf" target="_blank" rel="noopener">Report</a>
+                  <a class="btn" href="https://github.com/SuryaJadeEdakunni/marvel-storyline-optimizer/blob/main/docs/presentation.pdf" target="_blank" rel="noopener">Slides</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
+
     <script>
-      function showTab(id) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
+      // Top-level tabs: About Me / Projects
+      var tabs = document.querySelectorAll(".tab-button");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) {
+            var selected = t === tab;
+            t.setAttribute("aria-selected", selected ? "true" : "false");
+            document.getElementById(t.getAttribute("aria-controls")).hidden = !selected;
+          });
         });
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
+      });
+
+      // Category picker: show only the chosen category
+      var picks = document.querySelectorAll(".pick");
+      picks.forEach(function (pick) {
+        pick.addEventListener("click", function () {
+          picks.forEach(function (p) {
+            var chosen = p === pick;
+            p.setAttribute("aria-pressed", chosen ? "true" : "false");
+            document.getElementById(p.dataset.view).hidden = !chosen;
+          });
+          document.getElementById("pick-hint").hidden = true;
         });
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
-      }
+      });
     </script>
   </body>
 </html>
